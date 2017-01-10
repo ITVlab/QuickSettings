@@ -12,7 +12,9 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.SeekBar;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -55,6 +57,25 @@ public class ShutterActivity extends Activity {
             }
         });
         mStart = ((Switch) findViewById(R.id.option_start)).isChecked();
+
+        ((SeekBar) findViewById(R.id.delay)).setMax(100);
+        ((SeekBar) findViewById(R.id.delay)).setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mDelay = progress / 10 + 1;
+                ((TextView) findViewById(R.id.tv_delay)).setText("Delay: " + mDelay + "s");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     @Override

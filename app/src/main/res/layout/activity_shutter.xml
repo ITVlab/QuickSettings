@@ -2,14 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <Switch
-        android:layout_width="wrap_content"
-        android:text="Continuous"
-        android:id="@+id/option_burst"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Take multiple screenshots"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:id="@+id/option_burst"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:id="@+id/delay"
         android:layout_height="wrap_content" />
-    <Switch
-        android:layout_width="wrap_content"
-        android:text="Start taking screenshots"
-        android:id="@+id/option_start"
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/tv_delay"
+        android:text="Delay: 1s"
         android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="Start"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:layout_width="wrap_content"
+            android:id="@+id/option_start"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
 </LinearLayout>
